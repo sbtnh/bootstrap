@@ -1,0 +1,24 @@
+default:
+    description: 'Default (dev) build'
+    tasks:
+    - dev
+dev:
+    tasks:
+    - 'prod'
+    - 'browserSync'
+    - 'watch'
+prod:
+    tasks:
+    - 'clean'
+    - 'copy'
+    - 'imagemin'
+    - 'buildCss'
+    - 'buildJs'
+buildCss:
+    tasks:
+    - 'sass'
+    - 'postcss'
+buildJs:
+    tasks:
+    - 'jshint'
+    - 'browserify'
